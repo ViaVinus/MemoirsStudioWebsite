@@ -1,0 +1,245 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/green1.jpg);
+}
+
+header {
+    background-color: #4F6F52;
+    color: #fff;
+    padding: 15px;
+    text-align: right;
+    font-weight: bold;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 50px;
+    font-weight: bold;
+}
+    .active {
+    background-color: #416D19; 
+    color: #fff; 
+}
+
+nav a:not(.active):hover {
+    background-color: #A4CE95; 
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0%;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 96%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon input[type="text"] {
+    padding-left: 10px;
+    width: 100%;
+}
+
+.input-with-icon i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+button {
+    margin: 20px;
+    margin-left: 0px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #416D19;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.service-options {
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    list-style-type: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service-options label {
+    display: flex; 
+    align-items: center; 
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+
+.service-options label:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+}
+
+.service-options li {
+    margin: 10px 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.service-options input[type="checkbox"] {
+    display:none;
+}
+
+.checkbox {
+    margin-top: 20px;
+}
+
+.service-options li:hover {
+    background-color: #f0f0f0;
+}
+
+.show {
+    display: block;
+}
+.service-options input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+}
+
+.service-options input[type="checkbox"]:checked + label:before {
+    background-color: #416D19; 
+}
+
+.service-options input[type="checkbox"] + label:after {
+    content: "\2713"; 
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    display: none;
+}
+
+.service-options input[type="checkbox"]:checked + label:after {
+    display: block;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 1px;
+    }
+
+    .container {
+        max-width: 400px;
+        margin-top: 10px;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .input-group input {
+        width: 96%;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .input-with-icon i {
+        right: 10px;
+    }
+
+    .input-group input::placeholder {
+        font-size: 12px;
+        color: #999;
+    }
+
+    button {
+        margin: 10px 0;
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .service-options {
+        padding: 3px;
+        margin: 3px;
+        border-radius: 3px;
+    }
+
+    .service-options label {
+        font-size: 12px;
+    }
+
+    .service-options li {
+        font-size: 12px;
+    }
+}

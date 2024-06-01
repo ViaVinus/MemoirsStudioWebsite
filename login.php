@@ -6,11 +6,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$servername = 'localhost';
-    $username = 'admin'; 
-    $password = 'Memors123';
-    $dbname = 'memoirsstudio';
-
+  // Database connection parameters
+  $servername = 'localhost';
+  $username = 'root'; 
+  $password = '';
+  $dbname = 'memoirsstudio';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

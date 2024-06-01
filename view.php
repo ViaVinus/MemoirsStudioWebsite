@@ -138,11 +138,11 @@ if (!isset($_SESSION['username'])) {
     </tr>
 
     <?php
-$servername = 'localhost';
-$username = 'admin'; 
-$password = 'Memors123';
-$dbname = 'memoirsstudio';
-// Create connection
+  // Database connection parameters
+  $servername = 'localhost';
+  $username = 'root'; 
+  $password = '';
+  $dbname = 'memoirsstudio';
 $connection = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection

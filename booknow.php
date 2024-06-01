@@ -81,55 +81,61 @@
         </form>
     </div>
 
+     <!-- Google Calendar Embed -->
+     <div style="margin-top: 20px;">
+            <h2>Availability Calendar</h2>
+            <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=Asia/Manila" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+
     <script>
+        function confirmBooking(event) {
+            event.preventDefault(); // Prevent the default form submission
 
-    function confirmBooking(event) {
-        event.preventDefault(); // Prevent the default form submission
+            var selectedServicesInput = document.getElementById("select-services");
+            var selectedServices = selectedServicesInput.value;
 
-        var selectedServicesInput = document.getElementById("select-services");
-        var selectedServices = selectedServicesInput.value;
-
-        if (!selectedServices) {
-            alert("Please select at least one service.");
-            return;
-        }
-
-        // Ask for confirmation using SweetAlert
-        Swal.fire({
-            title: 'Are you sure?',
-            text: 'Do you want to confirm this booking?',
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, confirm!',
-            cancelButtonText: 'Cancel'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Perform form submission using AJAX
-                var formData = new FormData(document.getElementById('bookingForm'));
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'submit_action.php', true);
-                xhr.onload = function () {
-                    if (xhr.status === 200 && xhr.responseText === 'success') {
-                        Swal.fire(
-                            'Thank you!',
-                            'Your booking has been confirmed.',
-                            'success'
-                        ).then(() => {
-                            window.location.href = 'index.php';
-                        });
-                        document.getElementById('bookingForm').reset();
-                     } else {
-                        Swal.fire(
-                            'Oops!',
-                            'Something went wrong. Please try again later.',
-                            'error'
-                        );
-                    }
-                };
-                xhr.send(formData);
+            if (!selectedServices) {
+                alert("Please select at least one service.");
+                return;
             }
-        });
-    }
+
+            // Ask for confirmation using SweetAlert
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'Do you want to confirm this booking?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, confirm!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Perform form submission using AJAX
+                    var formData = new FormData(document.getElementById('bookingForm'));
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'submit_action.php', true);
+                    xhr.onload = function () {
+                        if (xhr.status === 200 && xhr.responseText === 'success') {
+                            Swal.fire(
+                                'Thank you!',
+                                'Your booking has been confirmed.',
+                                'success'
+                            ).then(() => {
+                                window.location.href = 'index.php';
+                            });
+                            document.getElementById('bookingForm').reset();
+                         } else {
+                            Swal.fire(
+                                'Oops!',
+                                'Something went wrong. Please try again later.',
+                                'error'
+                            );
+                        }
+                    };
+                    xhr.send(formData);
+                }
+            });
+        }
 
         function toggleServiceOptions() {
             var serviceOptions = document.getElementById("service-options");

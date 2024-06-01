@@ -11,8 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Database connection parameters
     $servername = 'localhost';
-    $username = 'admin'; 
-    $password = 'Memors123';
+    $username = 'root'; 
+    $password = '';
     $dbname = 'memoirsstudio';
 
     // Create connection

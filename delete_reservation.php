@@ -2,10 +2,11 @@
 if (isset($_GET['id'])) {
     $reservationId = $_GET['id'];
 
-    $servername = 'localhost';
-    $username = 'admin'; 
-    $password = 'Memors123';
-    $dbname = 'memoirsstudio';
+      // Database connection parameters
+      $servername = 'localhost';
+      $username = 'root'; 
+      $password = '';
+      $dbname = 'memoirsstudio';
 
     
     $connection = new mysqli($servername, $username, $password, $dbname);

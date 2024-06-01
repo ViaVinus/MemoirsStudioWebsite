@@ -13,10 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $target_file = $target_dir . basename($_FILES["service_image"]["name"]);
 
     if (move_uploaded_file($_FILES["service_image"]["tmp_name"], $target_file)) {
-        $servername = 'localhost';
-        $username = 'admin'; 
-        $password = 'Memors123';
-        $dbname = 'memoirsstudio';
+          // Database connection parameters
+    $servername = 'localhost';
+    $username = 'root'; 
+    $password = '';
+    $dbname = 'memoirsstudio';
           
         $conn = new mysqli($servername, $username, $password, $dbname);
 

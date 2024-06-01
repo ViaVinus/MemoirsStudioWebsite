@@ -275,10 +275,11 @@ tr:hover {
                         <th>Delete</th>
                     </tr>
     <?php
- $servername = 'localhost';
- $username = 'admin'; 
- $password = 'Memors123';
- $dbname = 'memoirsstudio';
+   // Database connection parameters
+   $servername = 'localhost';
+   $username = 'root'; 
+   $password = '';
+   $dbname = 'memoirsstudio';
 $connection = new mysqli($servername, $username, $password, $dbname);
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);

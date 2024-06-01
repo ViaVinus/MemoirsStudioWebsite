@@ -65,10 +65,11 @@
     <body>
 
     <?php
-  $servername = 'localhost';
-  $username = 'admin'; 
-  $password = 'Memors123';
-  $dbname = 'memoirsstudio';
+    // Database connection parameters
+    $servername = 'localhost';
+    $username = 'root'; 
+    $password = '';
+    $dbname = 'memoirsstudio';
 
     // Create connection
     $connection = new mysqli($servername, $username, $password, $dbname);

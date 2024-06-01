@@ -1,10 +1,11 @@
 <?php
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   $servername = 'localhost';
-    $username = 'u936666569_admin'; 
-    $password = 'Memors123';
-    $dbname = 'u936666569_memoirsstudio';
+    // Database connection parameters
+    $servername = 'localhost';
+    $username = 'root'; 
+    $password = '';
+    $dbname = 'memoirsstudio';
 
     $mysqli = new mysqli($servername, $username, $password, $dbname);
 
